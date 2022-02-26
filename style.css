@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&family=Redressed&family=Titillium+Web:wght@300&display=swap');
+
+:root {
+  --cyberpunkFont: 'Orbitron', sans-serif;
+  --overImageFontColor: chartreuse;
+  --overImageBackgroundColor: rgba(0,0,0,0.6);
+}
+
+body {
+  margin: 0;
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+}
+
+.img-container {
+  overflow: hidden;
+  flex: 3;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.form-container {
+  background-color: blue; /* temp */
+  flex: 5;
+}
+
+.background-img {
+  height: 100%;
+}
+
+.banner-background {
+  margin-top: 50vh;
+  padding: 20px;
+  width: 100%;
+  background-color: var(--overImageBackgroundColor);
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-img {
+  height: 6rem;
+  margin-right: 0.5rem;
+}
+
+.banner-txt {
+  font-size: 3rem;
+  font-family: var(--cyberpunkFont);
+  color: var(--overImageFontColor);
+}
+
+.credits-container {
+  width: 100%;
+  background-color: var(--overImageBackgroundColor);
+  position: absolute;
+  bottom: 0;
+  padding: 0.5rem;
+  display: flex;
+  justify-content: space-around;
+}
+
+.credits-container > span > a {
+  color: var(--overImageFontColor);
+  opacity: 0.6;
+  text-decoration: none;
+}
