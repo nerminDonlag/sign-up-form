@@ -4,6 +4,7 @@
   outline: none;
 }
 
+/* variables enable implementation of themes - future feature */
 :root {
   --cyberpunkFont: 'Orbitron', sans-serif;
   --baseFontColor: chartreuse;

@@ -1,3 +1,4 @@
+// selectors for inputs and buttons
 const firstName = document.getElementById('first-name');
 const lastName = document.getElementById('last-name');
 const email = document.getElementById('email');
@@ -13,10 +14,12 @@ const phoneNumberMsg = document.querySelector('.phone-number-msg');
 const passwordMsg = document.querySelector('.password-msg');
 const confirmPasswordMsg = document.querySelector('.confirm-password-msg');
 
+// alert warning if try to log in
 document.querySelector('.log-in').addEventListener('click', () => {
   alert('This is a fake online service!');
 });
 
+// event listeners for input fields
 firstName.addEventListener('focus', () => {
   if (!firstName.value) {
     firstNameMsg.innerHTML = 'Limited to 30 characters';
@@ -100,6 +103,8 @@ phoneNumber.addEventListener('keyup', () => {
 let passwordIsValid = false;
 
 password.addEventListener('focus', () => {
+  confirmePassword.value = '';
+  confirmPasswordMsg.innerHTML = '';
   if (!password.value) {
     passwordMsg.innerHTML = 'Limited to 30 characters';
     colorMsgOnFocus(passwordMsg);
@@ -164,6 +169,7 @@ confirmePassword.addEventListener('keyup', () => {
   }
 });
 
+// helper functions
 function colorMsgOnFocus(msgElement) {
   msgElement.style.color = 'white';
 }
@@ -176,28 +182,70 @@ function colorMsgOnIncorrect(msgElement) {
   msgElement.style.color = 'red';
 }
 
-function alertIncorrect() {
-  alert('Please fill all required form fields with valid inputs!');
-}
-
 function colorBorderOnIncorrect(element) {
   element.style.border = '2px solid red';
 }
 
-/*
+function colorBorderOnCorrect(element) {
+  element.style.border = '2px solid var(--baseFontColor)';
+}
+
+// form validation on click submit
 submitButton.addEventListener('click', () => {
 
   if (!firstName.value || firstName.value.length >= 30) {
-    alertIncorrect();
     colorBorderOnIncorrect(firstName);
+    alert('Please enter first name correctly');
+    return;
+  } else {
+    colorBorderOnCorrect(firstName);
   }
 
-  if (!lastName.value || lastName.value.length >= 30) {
-    alertIncorrect();
+  if (lastName.value.length >= 30) {
+    colorBorderOnIncorrect(lastName);
+    alert('Please enter last name correctly');
+    return;
+  } else {
+    colorBorderOnCorrect(lastName);
   }
 
+  if (!email.value || /.@./.test(email.value) === false) {
+    colorBorderOnIncorrect(email);
+    alert('Please enter email correctly');
+    return;
+  } else {
+    colorBorderOnCorrect(email);
+  }
+
+  if (phoneNumber.value.length >= 30) {
+    colorBorderOnIncorrect(phoneNumber);
+    alert('Please enter phone number correctly');
+    return;
+  } else {
+    colorBorderOnCorrect(phoneNumber);
+  }
+
+  if (!password.value || password.value.length < 5 || password.value.length > 30) {
+    colorBorderOnIncorrect(password);
+    colorBorderOnIncorrect(confirmePassword);
+    alert('Please enter a valid password and confirm it');
+    return;
+  } else if (password.value !== confirmePassword.value) {
+    colorBorderOnIncorrect(confirmePassword);
+    alert('Please confirm your password');
+    return;
+  } else {
+    colorBorderOnCorrect(password);
+    colorBorderOnCorrect(confirmePassword);
+  }
+
+  const formBottom = document.querySelector('.form-bottom');
+  formBottom.appendChild(document.createElement('div'));
+  const successMsg = formBottom.querySelector('.form-bottom > div');
+  successMsg.innerHTML = 'SUCCESS!';
+  successMsg.style.color = 'var(--baseFontColor)';
+  successMsg.style.fontSize = '8rem';
 });
-*/
 
 // on document load
 firstName.focus();
