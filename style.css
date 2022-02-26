@@ -164,7 +164,7 @@ label {
   text-decoration: none;
 }
 
-button {
+#submit-button {
   font-family: var(--cyberpunkFont);
   font-size: 1.2rem;
   font-weight: 900;
@@ -175,7 +175,11 @@ button {
   padding: 8px 16px;
 }
 
-button:focus, button:hover {
+#submit-button:focus, #submit-button:hover {
   color: var(--formBackgroundColor);
   background-color: var(--baseFontColor);
+}
+
+.msg {
+  padding-left: 10px;
 }

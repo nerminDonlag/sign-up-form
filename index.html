@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sign-up Form</title>
+  <title>The Future is Now</title>
   <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
 </head>
@@ -42,35 +42,41 @@
           <div class="form-cell">
             <label for="first-name">FIRST NAME <span class="required">*</span></label>
               <input type="text" id="first-name" name="first-name" required>
+              <span class="msg first-name-msg"></span>
           </div>
           <div class="form-cell">
             <label for="last-name">LAST NAME</label>
               <input type="text" id="last-name" name="last-name">
+              <span class="msg last-name-msg"></span>
           </div>
         </div>
         <div class="form-row">
           <div class="form-cell">
             <label for="email">EMAIL <span class="required">*</span></label>
               <input type="email" id="email" name="email" required>
+              <span class="msg email-msg"></span>
           </div>
           <div class="form-cell">
             <label for="phone-number">PHONE NUMBER</label>
               <input type="text" id="phone-number" name="phone-number">
+              <span class="msg phone-number-msg"></span>
           </div>
         </div>
         <div class="form-row">
           <div class="form-cell">
             <label for="password">PASSWORD <span class="required">*</span></label>
               <input type="password" id="password" name="password" required>
+              <span class="msg password-msg"></span>
           </div>
           <div class="form-cell">
             <label for="confirm-password">CONFIRM PASSWORD <span class="required">*</span></label>
               <input type="password" id="confirm-password" name="confirm-password" required>
+              <span class="msg confirm-password-msg"></span>
           </div>
         </div>
       </div>
       <div class="form-bottom">
-        <button type="button">CREATE ACCOUNT</button>
+        <button type="button" id="submit-button">CREATE ACCOUNT</button>
         <p>Already have an account? <a href="" class="log-in">Log in</a></p>
       </div>
     </div>
