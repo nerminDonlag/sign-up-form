@@ -1,8 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron&family=Redressed&family=Titillium+Web:wght@300&display=swap');
 
+*:focus {
+  outline: none;
+}
+
 :root {
   --cyberpunkFont: 'Orbitron', sans-serif;
-  --overImageFontColor: chartreuse;
+  --baseFontColor: chartreuse;
   --overImageBackgroundColor: rgba(0,0,0,0.6);
   --formTextColor: #ddd;
   --formInputsColor: #999;
@@ -12,6 +16,7 @@
 
 body {
   margin: 0;
+  overflow: hidden;
   font-family: var(--cyberpunkFont);
 }
 
@@ -57,7 +62,7 @@ body {
 
 .banner-txt {
   font-size: 3rem;
-  color: var(--overImageFontColor);
+  color: var(--baseFontColor);
 }
 
 .credits-container {
@@ -71,7 +76,7 @@ body {
 }
 
 .credits-container > span > a {
-  color: var(--overImageFontColor);
+  color: var(--baseFontColor);
   opacity: 0.6;
   text-decoration: none;
 }
@@ -81,7 +86,7 @@ body {
   background-color: var(--formBackgroundColor);
   color: var(--formTextColor);
   font-size: 1.2rem;
-  padding-left: 20px;
+  padding-left: 40px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -100,6 +105,8 @@ body {
   flex: 1;
   background-color: var(--formBackgroundColor);
   color: var(--formTextColor);
+  padding-left: 40px;
+  font-size: 1.2rem;
 }
 
 .alert {
@@ -114,11 +121,61 @@ body {
 
 .form-row {
   flex: 1;
+  display: flex;
 }
 
 .form-row > p {
-  padding-left: 20px;
+  padding-left: 40px;
   font-size: 1.2rem;
   color: var(--formTextColor);
   font-family: var(--cyberpunkFont);
+}
+
+.form-cell {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 0px 80px 0px 40px;
+}
+
+input {
+  min-width: 80%;
+  border: 2px solid var(--formInputsColor);
+  border-radius: 6px;
+  height: 1.6rem;
+  background-color: var(--formInputsBackgroundColor);
+  color: var(--baseFontColor);
+  padding-left: 10px;
+  font-family: monospace;
+  font-size: 1.1rem;
+}
+
+input:focus {
+  border: 2px solid white;
+}
+
+label {
+  margin: 0px 0px 2px 10px;
+}
+
+.required, .log-in {
+  color: var(--baseFontColor);
+  font-weight: 900;
+  text-decoration: none;
+}
+
+button {
+  font-family: var(--cyberpunkFont);
+  font-size: 1.2rem;
+  font-weight: 900;
+  color: var(--baseFontColor);
+  background-color: var(--formBackgroundColor);
+  border: 2px solid var(--baseFontColor);
+  border-radius: 6px;
+  padding: 8px 16px;
+}
+
+button:focus, button:hover {
+  color: var(--formBackgroundColor);
+  background-color: var(--baseFontColor);
 }
